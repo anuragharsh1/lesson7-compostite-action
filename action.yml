@@ -1,0 +1,23 @@
+name: coposite-action
+description: summation of two numbers
+inputs:
+    number1:
+       required: true
+       default: 0
+    number2:
+       required: true
+       default: 0
+       
+outputs:
+     result: ${{steps.sum-result.outputs.result}}
+runs:
+   using: composite
+   steps:
+       -name: sum of two nums
+        id: sum-result
+        shell: bash
+        run: |
+            num1 = ${{inputs.number1}}
+            num2 = ${{inputs.number2}}
+            result= $((num1+num2))
+            echo "result=$result" >> "GITHUB_OUTPUT"
