@@ -1,4 +1,4 @@
-name: coposite-action
+name: composite-action
 description: summation of two numbers
 inputs:
     number1:
