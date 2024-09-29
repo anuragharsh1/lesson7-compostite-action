@@ -9,7 +9,8 @@ inputs:
     default: 0
 
 outputs:
-  result: ${{ steps.sum-result.outputs.result }}
+  result:
+     value: ${{ steps.sum-result.outputs.result }}
 
 runs:
   using: "composite"
